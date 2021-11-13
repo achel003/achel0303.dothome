@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* Stylesheet 3: */
+        body {
+            font: 100% Verdana;
+            margin: 20px;
+            line-height: 26px;
+        }
+
+        .container {
+            xmin-width: 900px;
+        }
+
+        .wrapper {
+            position: relative;
+            overflow: auto;
+        }
+
+        #sidebar {
+            background-color: #f1f1f1;
+            border: 1px solid #d4d4d4;
+            padding-left: 10px;
+        }
+
+        #bottom {
+            text-align: center;
+            padding: 10px;
+            font-size: 70%;
+            line-height: 14px;
+        }
+
+        h1, h2, h3 {
+            color: #4CAF50;
+        }
+
+        #menulist {
+            padding: 0;
+            position: relative;
+            overflow: auto;
+        }
+
+        .menuitem {
+            width: 165px;
+            float: left;
+            background-color: #555555;
+            color: #ffffff;
+            list-style-type: none;
+            margin: 4px;
+            padding: 2px;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .menuitem:nth-child(3) {
+        background-color:#04AA6D;
+        }
+
+        .menuitem:hover {
+            background-color: #000;
+        }
+
+        a {
+            color: #000000;
+        }
+
+        a:hover {
+            color: #84c754;
+        }
+    </style>
+</head>
+    <body class="vsc-initialized">
+        <div class="container wrapper">
+          <div id="top">
+            <h1>test page: chel's homepage</h1>
+            <p>Use the menu to select Today's dish</p>
+          </div>
+          <div class="wrapper">
+           <div id="menubar">
+             <ul id="menulist">
+               <li class="menuitem" >놀부 보쌈
+               </li><li class="menuitem" >멕시카나 치킨
+               </li><li class="menuitem" >연어 샌드위치
+               </li><li class="menuitem" >샐러드
+             </li></ul>
+            </div>
+            <div id="main">
+              <h1>다이어트</h1>
+              <p>기한은 학기 말까지 목표로 한다. 옷 vs 식단<br>
+              </p>
+               <h2>testtesttest</h2>
+              <p></p>
+           </div>
+            <div id="sidebar">
+              <h3>Side-Dish</h3>
+              <p>쟁반막국수, 치즈볼, 날치알 주먹밥, 아이스크림</p>
+            </div>
+          </div>  
+        </div>
+        
+        <script>
+        function closeBlackdiv() {
+            var blackdiv, stylediv;
+            blackdiv = document.getElementById("blackdiv")
+            blackdiv.parentNode.removeChild(blackdiv);
+            stylediv = document.getElementById("stylediv")
+            stylediv.parentNode.removeChild(stylediv);
+        }
+        
+        function showStyle(n) {
+        var div, text, blackdiv;
+        blackdiv = document.createElement("DIV");
+        blackdiv.setAttribute("style","background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;");
+        blackdiv.setAttribute("id","blackdiv");
+        blackdiv.setAttribute("onclick","closeBlackdiv()");
+        document.body.appendChild(blackdiv);
+        div = document.createElement("DIV");
+        div.setAttribute("id","stylediv");
+        div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
+        text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML);
+        div.appendChild(text);
+        document.body.appendChild(div);
+        }
+        reStyle(0);
+        </script>
+        
+        
+        
+        </body>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <body class="vsc-initialized">
+        <div class="container wrapper">
+          <div id="top">
+            <h1>Welcome to NOSTYLE</h1>
+            <p>nostyle페이지는 style이 존재하지 않습니다.</p>
+          </div>
+          <div class="wrapper">
+           <div id="menubar">
+             <ul id="menulist">
+               <li class="menuitem" >nostyle 1
+               </li><li class="menuitem" >nostyle 2
+               </li><li class="menuitem" >nostyle 3
+               </li><li class="menuitem" >nostyle 4
+             </li></ul>
+            </div>
+            <div id="main">
+              <h1>CSS</h1>
+              <p>CSS는 실제로 프로그래밍 언어도, 마크업 언어도 아니다. Style sheet 언어로 HTML 문서에 있는 요소들에 선택적으로 스타일을 적용할 수 있다.
+              </p>
+               <h2>No Styles</h2>
+              <p>This page uses DIV elements to group different sections of the HTML page.</p>
+           </div>
+            <div id="sidebar">
+              <h3>Side-Bar</h3>
+              <p></p>
+            </div>
+          </div>  
+          
+          
+          <div id="bottom">
+            이 홈페이지의 html들(index.html, nostyle.html, style1.html, test.html)은 https://www.w3schools.com/css/demo_default.htm를 참고하여 제작되었습니다.
+          </div>
+        </div>
+        
+        <script>
+        function noStyles() {
+            document.styleSheets[0].disabled = true;
+            document.styleSheets[1].disabled = true;
+            document.styleSheets[2].disabled = true;
+            document.styleSheets[3].disabled = true;
+        }
+        
+        function reStyle(n) {
+            noStyles()
+            document.styleSheets[n].disabled = false;
+        }
+        reStyle(0);
+        </script>
+        
+        
+        
+        </body>
+
+</html>

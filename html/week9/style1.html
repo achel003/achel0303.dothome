@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* Stylesheet 1: */
+      body {
+          font: 100% Lucida Sans, Verdana;
+          margin: 20px;
+          line-height: 26px;
+      }
+
+      .container {
+          xmin-width: 900px;
+      }
+
+      .wrapper {
+          position: relative;
+          overflow: auto;
+      }
+
+      #top, #sidebar, #bottom, .menuitem {
+          border-radius: 4px;
+          margin: 4px;
+      }
+
+      #top {
+          background-color: #04AA6D;
+          color: #ffffff;
+          padding: 15px;
+      }
+
+      #menubar {
+          width: 200px;
+          float: left
+      }
+
+      #main {
+          padding: 10px;
+          margin: 0 210px;
+      }
+
+      #sidebar {
+          background-color: #32a4e7;
+          color: #ffffff;
+          padding: 10px;
+          width: 180px;
+          bottom: 0;
+          top: 0;
+          right: 0;
+          position: absolute;
+      }
+
+      #bottom {
+          border: 1px solid #d4d4d4;
+          background-color: #f1f1f1;
+          text-align: center;
+          padding: 10px;
+          font-size: 70%;
+          line-height: 14px;
+      }
+
+      #top h1, #top p, #menulist {
+          margin: 0;
+          padding: 0;
+      }
+
+      .menuitem {
+          background-color: #f1f1f1;
+          border: 1px solid #d4d4d4;
+          list-style-type: none;
+          padding: 2px;
+          cursor: pointer;
+      }
+
+      .menuitem:hover {
+          background-color: #ffffff;
+      }
+
+      .menuitem:first-child {
+        background-color:#04AA6D;
+        color: white;
+        font-weight:bold;
+      }
+
+      a {
+          color: #000000;
+          text-decoration: underline;
+      }
+
+      a:hover {
+          text-decoration: none;
+      }
+
+
+      @media (max-width: 800px) {
+          #sidebar {
+              width: auto;
+              position: relative;
+          } 
+          #main {
+              margin-right: 0;
+          }    
+            
+      }
+
+      @media (max-width: 600px) {
+          #menubar {
+              width: auto;
+              float: none;
+          }
+          #main {
+              margin: 0;
+          }    
+      }
+    </style>
+</head>
+    <body class="vsc-initialized">
+        <div class="container wrapper">
+          <div id="top">
+            <h1>Welcome to STYLE1</h1>
+            <p>이 페이지는 css를 적용하여 style이 존재합니다.</p>
+          </div>
+          <div class="wrapper">
+           <div id="menubar">
+             <ul id="menulist">
+               <li class="menuitem" >style 1
+               </li><li class="menuitem" >style 2
+               </li><li class="menuitem" >style 3
+               </li><li class="menuitem" >style 4
+             </li></ul>
+            </div>
+            <div id="main">
+              <h1>HTML</h1>
+              <p>HTML(Hyper Text Markup Language)은 페이지에 제목, 문단, 표, 이미지, 동영상 등을 정의하고 그 구조와 의미를 부여하는 정적 언어로 웹의 구조를 담당합니다.</p>
+              <h1>CSS</h1>
+              <p>CSS(Cascading Style Sheets)는 마크업 언어(HTML, XML 등)가 실제 표시되는 방법(색상, 크기, 폰트, 레이아웃 등)을 지정하여 콘텐츠 구조를 꾸며주는 정적 언어로 웹의 시각적인 표현을 담당합니다.</p>
+              <h2>설명</h2>
+              <p>css 기본문법은 선택자와 선언자로 나뉘는데, 선택자는 스타일을 지정할 HTML 요소(태그,아이디 등)를 가리키고 선언부에는 CSS 속성 이름과 값이 포함된다고 한다. 적용방법에는 내부스타일시트, 외부스타일시트, 인라인 시트 총 3가지가 있는데, 내부스타일시트같은 경우,  html 과 css 가 한 파일에 있으므로 작업이 쉽고 간편하지만 css의 재활용이 안되는 문제가 있어 특별한 경우가 아니면 외부 스타일시트를 권장한다고 한다.</p>
+           </div>
+            <div id="sidebar">
+              <h3>CSS를 사용해야만 하는 이유</h3>
+              <p>
+                다양한 기기에 맞게 탄력적으로 바뀌는 콘텐츠에 따라 반응형 디자인(Responsive Design)을 구현 가능하다는 장점이 있다.
+                또한, 동일한 문서구조를 가지고 서로 다른 CSS 테마 적용이 가능하다고 한다.
+              </p>
+            </div>
+          </div>  
+          
+          
+          <div id="bottom">
+            이 홈페이지의 html들(index.html, nostyle.html, style1.html, test.html)은 https://www.w3schools.com/css/demo_default.htm를 참고하여 제작되었습니다.
+          </div>
+        </div>
+        
+        <script>
+          function closeBlackdiv() {
+              var blackdiv, stylediv;
+              blackdiv = document.getElementById("blackdiv")
+              blackdiv.parentNode.removeChild(blackdiv);
+              stylediv = document.getElementById("stylediv")
+              stylediv.parentNode.removeChild(stylediv);
+          }
+          function showStyle(n) {
+          var div, text, blackdiv;
+          blackdiv = document.createElement("DIV");
+          blackdiv.setAttribute("style","background-color:#000000;position:absolute;width:100%;height:100%;top:0;opacity:0.5;margin-left:-20px;");
+          blackdiv.setAttribute("id","blackdiv");
+          blackdiv.setAttribute("onclick","closeBlackdiv()");
+          document.body.appendChild(blackdiv);
+          div = document.createElement("DIV");
+          div.setAttribute("id","stylediv");
+          div.setAttribute("style","background-color:#ffffff;padding-left:5px;position:absolute;width:auto;height:auto;top:100px;bottom:50px;left:200px;right:200px;overflow:auto;font-family: monospace; white-space: pre;line-height:16px;");
+          text = document.createTextNode(document.getElementsByTagName("STYLE")[n].innerHTML);
+          div.appendChild(text);
+          document.body.appendChild(div);
+          //alert(document.getElementsByTagName("STYLE")[n].innerHTML);
+          }
+        </script>
+        </body>
+</html>
