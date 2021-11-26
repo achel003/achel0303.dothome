@@ -28,6 +28,17 @@
         text-indent:10px;
         font-weight:bold;
     }
+
+    #top-link-block.affix-top {
+    position: absolute; /* allows it to "slide" up into view */
+      bottom: -82px;
+      left: 10px;
+  }
+  #top-link-block.affix {
+      position: fixed; /* keeps it on the bottom once in view */
+      bottom: 18px;
+      left: 10px;
+  }
   </style>
 </head>
 
@@ -47,7 +58,6 @@
               <li><a href="Data.html">Home</a></li>
               <li><a href="map.html">MAP</a></li>
               <li class="active"><a href="graph.html">GRAPH</a></li>
-              <li><a href="solution.html">SOLUTION</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a href="Data.html"><span class="glyphicon glyphicon-log-in"></span></a></li>
@@ -116,18 +126,17 @@
     </div>
   </div>
 </div><br>
+<span id="top-link-block" class="hidden">
+  <a href="#top" class="well well-sm" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+      <i class="glyphicon glyphicon-chevron-up"></i> Back to Top
+  </a>
+</span><!-- /top-link-block -->
 <br/>
 <br/>
 
 <footer class="container-fluid text-center">
   <p>Footer Text</p>
-  <ul class="pagination">
-    <li><a href="#">1</a></li>
-    <li class="active"><a href="#">2</a></li>
-    <li><a href="#">3</a></li>
-    <li><a href="#">4</a></li>
-    <li><a href="#">5</a></li>
-  </ul>
+
 </footer>
 
 <script>
@@ -152,6 +161,13 @@
     //     theImg.src = '/img/africa/country-location' + this.options[this.selectedIndex].value + '-isolated-largecity.png';
     //     theImg.src = '/img/africa/country-location' + this.options[this.selectedIndex].value + '-rural-smalltown.png';
     // }, false);
+
+    if ( ($(window).height() + 100) < $(document).height() ) {
+        $('#top-link-block').removeClass('hidden').affix({
+            // how far to scroll down before link "slides" into view
+            offset: {top:100}
+        });
+    }
 
 </script>
 </body>
